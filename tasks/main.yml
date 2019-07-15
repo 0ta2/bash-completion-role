@@ -1,0 +1,5 @@
+---
+- name: Yum install
+  yum:
+    name: bash-completion
+    state: present

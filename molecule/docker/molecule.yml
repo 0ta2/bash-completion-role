@@ -1,0 +1,34 @@
+---
+scenario:
+  name: docker
+driver:
+  name: docker
+lint:
+  name: yamllint
+  options:
+    config-file: ../shared/yaml-lint.yml
+platforms:
+  - name: instance
+    image: centos:7
+    environment:
+      ENVIRONMENT: ${ENVIRONMENT}
+provisioner:
+  name: ansible
+  playbooks:
+    converge: ../shared/playbook.yml
+    verify: ../shared/playbook.yml
+    prepare: ../shared/prepare.yml
+  config_options:
+    diff:
+      always: true
+  lint:
+    name: ansible-lint
+verifier:
+  name: goss
+  lint:
+    name: yamllint
+    options:
+      config-file: ../shared/yaml-lint.yml
+  directory: ../shared/tests
+  additional_files_or_dirs:
+    - ../shared/tests/*.yml
