@@ -6,7 +6,7 @@ driver:
 lint:
   name: yamllint
   options:
-    config-file: ../shared/yaml-lint.yml
+    config-file: ${MOLECULE_PROJECT_DIRECTORY}/molecule/shared/yaml-lint.yml
 platforms:
   - name: instance
     image: centos:7
@@ -15,9 +15,9 @@ platforms:
 provisioner:
   name: ansible
   playbooks:
-    converge: ../shared/playbook.yml
-    verify: ../shared/playbook.yml
-    prepare: ../shared/prepare.yml
+    converge: ${MOLECULE_PROJECT_DIRECTORY}/molecule/shared/playbook.yml
+    verify: ${MOLECULE_PROJECT_DIRECTORY}/molecule/shared/verify.yml
+    prepare: ${MOLECULE_PROJECT_DIRECTORY}/molecule/shared/prepare.yml
   config_options:
     diff:
       always: true
@@ -28,7 +28,5 @@ verifier:
   lint:
     name: yamllint
     options:
-      config-file: ../shared/yaml-lint.yml
+      config-file: ${MOLECULE_PROJECT_DIRECTORY}/molecule/shared/yaml-lint.yml
   directory: ../shared/tests
-  additional_files_or_dirs:
-    - ../shared/tests/*.yml

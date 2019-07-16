@@ -2,4 +2,3 @@
 package:
   bash-completion:
     installed: true
-    skip: false
