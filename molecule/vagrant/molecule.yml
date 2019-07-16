@@ -50,6 +50,6 @@ verifier:
     name: yamllint
     options:
       config-file: ${MOLECULE_PROJECT_DIRECTORY}/molecule/shared/yaml-lint.yml
-  directory: ${MOLECULE_PROJECT_DIRECTORY}/molecule/shared/tests
+  directory: ../shared/tests/
   additional_filer_or_dirs:
-    - .${MOLECULE_PROJECT_DIRECTORY}/molecule/shared/tests/*.yml
+    - ../shared/tests/*.yml
