@@ -40,8 +40,6 @@
       command: "{{ goss_dst }} -g {{ item }} validate --format {{ goss_format }}"
       register: test_results
       with_items: "{{ test_files.stdout_lines }}"
-      environment:
-        ENVIRONMENT: "{{ lookup('env', 'ENVIRONMENT')}}"
 
     - name: Display details about the Goss results
       debug:

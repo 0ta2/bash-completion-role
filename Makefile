@@ -20,3 +20,9 @@ create:
 
 converge:
 	@$(MOLECULE) $(DEBUG) converge --scenario-name docker
+
+login:
+	@$(MOLECULE) $(DEBUG) login --scenario-name docker
+
+verify:
+	@$(MOLECULE) $(DEBUG) verify --scenario-name docker
