@@ -1,5 +1,5 @@
 ---
-- name: Yum install
-  yum:
+- name: Install bash-completion.
+  package:
     name: bash-completion
     state: present
