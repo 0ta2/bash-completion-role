@@ -1,0 +1,14 @@
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Verify
+  hosts: all
+  tasks:
+  - name: Check Installed a php package.
+    package_facts:
+      manager: auto
+
+  - name: Test if bash-completion package is installed.
+    assert:
+      that:
+        - "'bash-completion' in ansible_facts.packages"
