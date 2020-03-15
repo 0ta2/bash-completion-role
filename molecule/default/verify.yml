@@ -4,7 +4,7 @@
 - name: Verify
   hosts: all
   tasks:
-  - name: Check Installed a php package.
+  - name: Check Installed a bash-completion package.
     package_facts:
       manager: auto
 
