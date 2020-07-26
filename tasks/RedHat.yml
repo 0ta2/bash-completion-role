@@ -1,0 +1,5 @@
+---
+- name: '[RedHat] Install bash-completion.'
+  package:
+    name: "bash-completion"
+    state: present
