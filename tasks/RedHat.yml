@@ -1,5 +1,5 @@
 ---
 - name: '[RedHat] Install bash-completion.'
   package:
-    name: "git"
-    state: "{{ git_package_state | default('present') }}"
+    name: "bash-completion"
+    state: present
